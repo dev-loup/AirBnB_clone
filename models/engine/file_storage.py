@@ -43,7 +43,7 @@ class FileStorage():
         """
 
         casted_dict = dict()
-        for key in __objects.keys():
+        for key in FileStorage.__objects.keys():
             casted_dict[key] = _objects[key].to_dict()
         json_string = json.dumps(casted_dict)
         with open(FileStorage.__file_path, 'w') as docfile:
@@ -52,7 +52,7 @@ class FileStorage():
     def reload(self):
         """ load a JSON FILE to __objects
         """
-        if os.path.isfile(FileStorage.__objects) is False:
-            return FileStorage.__objects
+        if os.path.isfile(FileStorage.__file_path) is False:
+            return
         with open(FileStorage.__file_path, 'r') as docfile:
             FileStorage.__objects = dict()

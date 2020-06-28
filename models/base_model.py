@@ -27,7 +27,7 @@ class BaseModel():
         """ instance constructor
         """
 
-        if len(kwargs) != 0:
+        if len(kwargs) > 0:
             for key in kwargs.keys():
                 if key == '__class__':
                     continue

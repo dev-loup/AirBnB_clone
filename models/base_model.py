@@ -7,7 +7,6 @@
 
 from uuid import uuid4
 import datetime
-from models import storage
 
 
 class BaseModel():
@@ -55,7 +54,9 @@ class BaseModel():
         """ updates the public instance attribute updated_at
         """
 
+        from models import storage
         self.updated_at = datetime.datetime.now()
+        storage.new(self)
         storage.save()
 
     def to_dict(self):

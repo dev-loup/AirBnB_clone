@@ -7,6 +7,8 @@
 
 import os
 import json
+import sys
+from models.base_model import BaseModel
 
 
 class FileStorage():
@@ -35,18 +37,17 @@ class FileStorage():
         """
 
         key = "{}.{}".format(obj.__class__.__name__, obj.id)
-        packed_object = (key, obj)
-        FileStorage.__objects.update(packed_object)
+        FileStorage.__objects[key] = obj
 
     def save(self):
         """ Serialize __objects to JSON FILE
         """
 
-        casted_dict = dict()
+        cast__objects = dict()
         for key in FileStorage.__objects.keys():
-            casted_dict[key] = _objects[key].to_dict()
-        json_string = json.dumps(casted_dict)
-        with open(FileStorage.__file_path, 'w') as docfile:
+            cast__objects[key] = FileStorage.__objects[key].to_dict()
+        json_string = json.dumps(cast__objects)
+        with open(FileStorage.__file_path, 'w+') as docfile:
             docfile.write(json_string)
 
     def reload(self):
@@ -55,4 +56,11 @@ class FileStorage():
         if os.path.isfile(FileStorage.__file_path) is False:
             return
         with open(FileStorage.__file_path, 'r') as docfile:
-            FileStorage.__objects = dict()
+            doc_read = docfile.read()
+            if len(doc_read) == 0:
+                return
+            dict_load = json.loads(doc_read)
+            for inst in dict_load.keys():
+                inst_class = inst.split('.')
+                FileStorage.new(self, getattr(sys.modules[__name__],
+                                inst_class[0])(**dict_load[inst]))

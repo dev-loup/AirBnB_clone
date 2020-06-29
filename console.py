@@ -28,7 +28,7 @@ class HBNBCommand(cmd.Cmd):
         """
 
         sys.exit()
-    
+
     def do_EOF(self, arg):
         """EOF command for forcing exit
         """

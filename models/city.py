@@ -1,0 +1,20 @@
+#!/usr/bin/python3
+""" City Class module.
+    Set an HBNB City parameters
+    Classes:
+        User: stores all the data of a new city
+"""
+
+from models import base_model
+
+
+class City(base_model.BaseModel):
+    """ Defines attributes and parameters of user class
+        Public Class Attributes:
+            name: city's name
+    """
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.state_id = ""
+        self.name = ""

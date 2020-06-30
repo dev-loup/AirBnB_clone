@@ -2,14 +2,14 @@
 """ Place Class module.
     Set an HBNB Full Place parameters
     Classes:
-        Place: stores all the place attributes
+        Review: stores all the place attributes
 """
 
 from models import base_model
 
 
-class Place(base_model.BaseModel):
-    """ Defines attributes and parameters of user class
+class Review(base_model.BaseModel):
+    """ Defines attributes and parameters of Review class
         Public Class Attributes:
             place_id: place's identification
             user_id: user who reviewed

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Engine module init
+""" Models module init
     Modules:
         file_storage.py
 """

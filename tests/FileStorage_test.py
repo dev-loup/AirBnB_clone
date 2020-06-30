@@ -57,11 +57,6 @@ class MethodsTest(unittest.TestCase):
         if os.path.isfile('file.json'):
             with open('file.json', 'r') as docfile:
                 docread = docfile.read()
-                if len(docread) > 0:
-                    storage.reload()
-                    obj_size_two = len(storage.all())
-                    self.assertNotEqual(obj_size_one, obj_size_two)
-                else:
-                    storage.reload()
-                    obj_size_two = len(storage.all())
-                    self.assertEqual(obj_size_one, obj_size_two)
+                storage.reload()
+                storage.reload()
+                self.assertGreater(obj_size_one, 0)

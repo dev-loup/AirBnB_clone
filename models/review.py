@@ -5,10 +5,10 @@
         Review: stores all the place attributes
 """
 
-from models import base_model
+from models.base_model import BaseModel
 
 
-class Review(base_model.BaseModel):
+class Review(BaseModel):
     """ Defines attributes and parameters of Review class
         Public Class Attributes:
             place_id: place's identification

@@ -12,22 +12,12 @@ class HBNBCommand(cmd.Cmd):
     """ Command interpreter for HbNB clone
     """
 
-    def __init__(self):
-        """ class constructor
-        """
-
-        cmd.Cmd.__init__(self)
-        self.intro = r"""
-        HbNB Clone command interpreter
-        -----------------------------
-                Welcome Human """
-        self.prompt = '(HBNB) '
+    prompt = '(HBNB) '
 
     def do_quit(self, arg):
         """exit from HBNB console
         """
-
-        sys.exit()
+        return True
 
     def do_EOF(self, arg):
         """EOF command for forcing exit
@@ -35,6 +25,8 @@ class HBNBCommand(cmd.Cmd):
 
         return True
 
+    def do_emptlyline(self):
+        return None
 
-HBNBConsole = HBNBCommand()
-HBNBConsole.cmdloop()
+if __name__ == '__main__':
+    HBNBCommand().cmdloop()

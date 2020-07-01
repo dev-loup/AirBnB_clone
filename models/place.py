@@ -5,10 +5,10 @@
         Place: stores all the place attributes
 """
 
-from models import base_model
+from models.base_model import BaseModel
 
 
-class Place(base_model.BaseModel):
+class Place(BaseModel):
     """ Defines attributes and parameters of user class
         Public Class Attributes:
             city_id: cities identification

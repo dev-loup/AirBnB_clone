@@ -5,10 +5,10 @@
         User: stores all the data of a new city
 """
 
-from models import base_model
+from models.base_model import BaseModel
 
 
-class City(base_model.BaseModel):
+class City(BaseModel):
     """ Defines attributes and parameters of user class
         Public Class Attributes:
             name: city's name

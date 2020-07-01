@@ -5,10 +5,10 @@
         Amenity: create an Amenity class with name
 """
 
-from models import base_model
+from models.base_model import BaseModel
 
 
-class Amenity(base_model.BaseModel):
+class Amenity(BaseModel):
     """ Defines attributes and parameters of State class
         Public Class Attributes:
             name: Amenity's name

@@ -5,9 +5,7 @@
         FileStorage: serialization of JSON files
 """
 
-import os
 import json
-import sys
 from models.base_model import BaseModel
 from models.amenity import Amenity
 from models.city import City
@@ -59,14 +57,11 @@ class FileStorage():
     def reload(self):
         """ load a JSON FILE to __objects
         """
-        if os.path.isfile(FileStorage.__file_path) is False:
-            return
-        with open(FileStorage.__file_path, 'r') as docfile:
-            doc_read = docfile.read()
-            if len(doc_read) == 0:
-                return
-            dict_load = json.loads(doc_read)
-            for inst in dict_load.keys():
-                inst_class = inst.split('.')
-                FileStorage.new(self, getattr(sys.modules[__name__],
-                                inst_class[0])(**dict_load[inst]))
+
+        try:
+            with open(FileStorage.__file_path, 'r') as docfile:
+                dict_load = json.loads(docfile)
+                for k, v in dict_load.items():
+                    self.__objects[k] = eval(v['__class__'])(**v)
+        except Exception:
+            pass

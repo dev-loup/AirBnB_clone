@@ -4,11 +4,11 @@
         HBNBCommand: HbBN Console
 """
 
-import cmd
+from cmd import Cmd
 import sys
 
 
-class HBNBCommand(cmd.Cmd):
+class HBNBCommand(Cmd):
     """ Command interpreter for HbNB clone
     """
 
@@ -27,6 +27,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_emptlyline(self):
         return None
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()

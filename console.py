@@ -4,18 +4,18 @@
         HBNBCommand: HbBN Console
 """
 
-from cmd import Cmd
+import cmd
 import sys
 
 
-class HBNBCommand(Cmd):
+class HBNBCommand(cmd.Cmd):
     """ Command interpreter for HbNB clone
     """
 
-    prompt = '(HBNB) '
+    prompt = '(hbnb) '
 
     def do_quit(self, arg):
-        """exit from HBNB console
+        """Quit command to exit the program
         """
         return True
 
@@ -25,10 +25,11 @@ class HBNBCommand(Cmd):
 
         return True
 
-    def do_emptlyline(self):
+    def emptyline(self):
         """Handles the emplty line
         """
-        return None
+
+        pass
 
 
 if __name__ == '__main__':

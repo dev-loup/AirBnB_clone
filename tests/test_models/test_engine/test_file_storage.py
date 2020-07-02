@@ -12,6 +12,19 @@ import os
 import json
 
 
+class AttributesTest(unittest.TestCase):
+    """ Test if attributes in class are working fine
+    """
+
+    def test_file_storage(self):
+        """ test name attr existance
+        """
+
+        dummy = storage()
+        self.assertIsNotNone(dummy.__file_path)
+        self.assertIsNotNone(dummy.__objects)
+
+
 class MethodsTest(unittest.TestCase):
     """ Test proper FileStorage method working
     """
@@ -31,7 +44,7 @@ class MethodsTest(unittest.TestCase):
         key = "{}.{}".format(dummy.__class__.__name__, dummy.id)
         self.assertTrue(storage.all()[key])
 
-    def test_saving(self):
+    def test_save(self):
         """ Test saving a
         """
 

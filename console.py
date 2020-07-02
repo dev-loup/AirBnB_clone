@@ -4,11 +4,11 @@
         HBNBCommand: HbBN Console
 """
 
-from cmd import Cmd
+import cmd
 import sys
 
 
-class HBNBCommand(Cmd):
+class HBNBCommand(cmd.Cmd):
     """ Command interpreter for HbNB clone
     """
 
@@ -25,10 +25,10 @@ class HBNBCommand(Cmd):
 
         return True
 
-    def do_emptlyline(self):
+    def emptlyline(self):
         """Handles the emplty line
         """
-        return None
+        pass
 
 
 if __name__ == '__main__':

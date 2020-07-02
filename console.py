@@ -26,6 +26,8 @@ class HBNBCommand(Cmd):
         return True
 
     def do_emptlyline(self):
+        """Handles the emplty line
+        """
         return None
 
 

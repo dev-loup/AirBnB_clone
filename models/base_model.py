@@ -33,7 +33,8 @@ class BaseModel():
                     continue
                 elif key == 'created_at' or key == 'updated_at':
                     setattr(self, key,
-                            datetime.strptime(kwargs[key]), '%Y-%m-%dT%H:%M:%S.%f')
+                            datetime.strptime(kwargs[key],
+                                              '%Y-%m-%dT%H:%M:%S.%f'))
                 else:
                     setattr(self, key, kwargs[key])
         else:

@@ -26,5 +26,5 @@ class FileTest(unittest.TestCase):
 
         for path in self.files:
             with self.subTest(path=path):
-                self.assertEqual((os.path.isfile(path)
-                                  or os.path.isdir(path)), True)
+                self.assertEqual((os.path.isfile(path) or
+                                  os.path.isdir(path)), True)

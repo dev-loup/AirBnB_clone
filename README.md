@@ -1,19 +1,27 @@
-# HbNB - The AirBnb Clone V 1.0
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
+# HBNB - The AirBnb Clone V 1.0
+<p align="center">
+  <img src="/misc/HBNB.png" alt="bash" width="350" height="150">
 
 HBNB clone takes AirBnb original Web page and services for making a full functional Service, back-end and front-end are implemented from scratch following this structure:
 
-![structure](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/6/815046647d23428a14ca.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUWMNL5ANN%2F20200630%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200630T170051Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=d7ccfcb514efa114e8c67f6ae6c5264bc83bdca3c0fb2681496a3db256dac0fd)
+<p align="center">
+  <img src="/misc/scheme.png" alt="bash" width="700" height="325">
+</p>
 
-## Getting started
+## Getting started 
 
-* Lite Shell works on Unix-like systems but Linux distros are prefered
-
-* Lite Shell is not distributed by any homebrew then for installing you must clone the repository and copy liteshell to /bin
+* HBNB system manages front-end site appeareance, back-end manages data persistance and JSON manipulation, APi's for interacting with HBNB will be developed in future releases
 
 Inside the repository execute:
 
 ```bash
-cp liteshell /bin
+./console.py
 ```
 
 ## Usage
@@ -23,23 +31,49 @@ cp liteshell /bin
 * in non interactive mode from SH:
 
 ```bash
-SH> echo "input" | liteshell
-SH> "input"
+$> echo "help" | ./console.py
+>custom help response<
+$>
 ```
 
 * In interactive mode:
 
 ```bash
-SH> liteshell
-lsh> echo "input"
-lsh> "input"
+$ ./console.py
+(hbnb) help
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+
+(hbnb) 
+(hbnb) 
+(hbnb) quit
+$
 ```
 
 * Going out interactive mode
 
 ```bash
-lsh> exit
-SH>
+$ echo "help" | ./console.py
+(hbnb)
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb) 
+$
+$ cat test_help
+help
+$
+$ cat test_help | ./console.py
+(hbnb)
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb) 
+$
 ```
 
 ## Road Map
@@ -55,3 +89,14 @@ Pull requests and reporting issues are always welcome, make a pull request for c
 ## License
 
 Educational purposes, content is not licensed and it does not have technical support
+
+[contributors-shield]: https://img.shields.io/github/contributors/diego-9407/AirBnB_clone?style=flat-square
+[contributors-url]: https://github.com/diego-9407/AirBnB_clone/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/diego-9407/AirBnB_clone.svg?style=flat-square
+[forks-url]: https://github.com/diego-9407/AirBnB_clone/network/members
+[stars-shield]: https://img.shields.io/github/stars/diego-9407/AirBnB_clone.svg?style=flat-square
+[stars-url]: https://github.com/diego-9407/AirBnB_clone/stargazers
+[issues-shield]: https://img.shields.io/github/issues/diego-9407/AirBnB_clone?style=flat-square
+[issues-url]: https://github.com/diego-9407/AirBnB_clone/issues
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/diegromero

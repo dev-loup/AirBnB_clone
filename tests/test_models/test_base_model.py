@@ -8,6 +8,7 @@
 import unittest
 from models.base_model import BaseModel
 import uuid
+import pep8
 import datetime
 
 
@@ -31,6 +32,12 @@ class AttributesTest(unittest.TestCase):
                 BaseModel.created_at
                 BaseModel.updated_at
         """
+
+    def test_pep8_BaseModel(self):
+        """ Tests pep8 """
+        style = pep8.StyleGuide(quiet=True)
+        p = style.check_files(['models/base_model.py'])
+        self.assertEqual(p.total_errors, 0, "fix pep8")
 
         dummy = BaseModel()
         self.assertIsInstance(dummy.created_at, datetime.datetime)

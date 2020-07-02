@@ -6,7 +6,7 @@
 """
 
 from uuid import uuid4
-import datetime
+from datetime import datetime
 import models
 
 
@@ -33,13 +33,13 @@ class BaseModel():
                     continue
                 elif key == 'created_at' or key == 'updated_at':
                     setattr(self, key,
-                            datetime.datetime.fromisoformat(kwargs[key]))
+                            datetime.strptime(kwargs[key]), '%Y-%m-%dT%H:%M:%S.%f')
                 else:
                     setattr(self, key, kwargs[key])
         else:
             self.id = str(uuid4())
-            self.created_at = datetime.datetime.now()
-            self.updated_at = datetime.datetime.now()
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
             models.storage.new(self)
 
     def __str__(self):
@@ -56,7 +56,7 @@ class BaseModel():
         """ updates the public instance attribute updated_at
         """
 
-        self.updated_at = datetime.datetime.now()
+        self.updated_at = datetime.now()
         models.storage.save()
 
     def to_dict(self):
